@@ -1,0 +1,30 @@
+﻿<Window x:Class="ProjektJA.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjektJA"
+        mc:Ignorable="d"
+        Title="Vigeneres Cypher" Height="265.589" Width="448.824">
+    <Grid Background="#FF007E9B">
+        <Button x:Name="button" Content="Encode" Command ="{Binding EncodeCommand, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" Margin="10,181,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="button1" Content="Decode" Command="{Binding DecodeCommand, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="153,181,0,0" VerticalAlignment="Top" Width="75" />
+        <TextBox x:Name="textBox"  HorizontalAlignment="Left" Height="23" Margin="10,141,0,0" TextWrapping="Wrap" Text="{Binding Model.Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="218"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="10,92,0,0" TextWrapping="Wrap" Text="{Binding Model.OutputPath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="218"/>
+        <TextBox x:Name="textBox2" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="10,44,0,0" TextWrapping="Wrap" Text="{Binding Model.InputPath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="218"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Input Path"/></TextBlock>
+        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="10,72,0,0" TextWrapping="Wrap" Text="Output Path" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock_Copy1" HorizontalAlignment="Left" Margin="10,120,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top"/>
+        <GroupBox x:Name="groupBox" Header="Using:" HorizontalAlignment="Left" Margin="292,23,0,0" VerticalAlignment="Top" Height="79" Width="120">
+            <StackPanel HorizontalAlignment="Left" Height="48" Margin="10,10,0,-1" VerticalAlignment="Top" Width="87">
+                <RadioButton x:Name="radioButton" Content="Masm DLL" IsChecked="{Binding Model.MasmLibrary}"/>
+                <RadioButton x:Name="radioButton1" Content="Cpp DLL" IsChecked="{Binding Model.CppLibrary}" HorizontalAlignment="Left" Margin="0, 10, 0,0"  VerticalAlignment="Top"/>
+            </StackPanel>
+        </GroupBox>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="292,120,0,0" TextWrapping="Wrap" Text="Elapsed Time" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="292,141,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="button2" Content=". . ." HorizontalAlignment="Left" VerticalAlignment="Top" Width="29" Margin="233,44,0,0" Height="23" Click="button2_Click"/>
+        <Button x:Name="button2_Copy" Content=". . ." HorizontalAlignment="Left" VerticalAlignment="Top" Width="29" Margin="233,92,0,0" Height="23" Click="button2_Copy_Click"/>
+
+    </Grid>
+</Window>

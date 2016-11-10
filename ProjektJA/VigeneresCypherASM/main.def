@@ -1,0 +1,4 @@
+LIBRARY VigeCypherAsm
+EXPORTS
+AsmEncode
+AsmDecode
